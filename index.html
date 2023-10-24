@@ -25,23 +25,31 @@
     const Banner = () => {
       const title = "Welcome to my website"
       const subtitle = "this is a website for learning react"
-      const address = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+
+      // const handleClick = (event) => {
+      //     console.log("you clicked me")
+      //     console.log("the site tile is", title)
+      //     console.log("tuuuuuuuuuuuuuuki")
+      //     console.log(event)
+      // }
 
       return (
           // in jsx template use CLASSNAME not CLASS
           <div className="banner">
               <h2>{title.toUpperCase()}</h2>
               <p>{subtitle}</p>
-              <p>Today's date is: {new Date().toDateString()}</p>
-              <p>Random number: {Math.random() * 100}</p>
-              <a href={address}> VISIT SITE !!! </a>
-
+              <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                <button onClick={(e) => console.log("tuki")}>Click me</button>
+              </a>
           </div>
       )
     }
 
     //render the component to the DOM
-    ReactDOM.render(<Banner />, document.getElementById('banner'))
+    const domNode = document.getElementById('banner');
+    const root = ReactDOM.createRoot(domNode);
+    root.render(<Banner />);
+    //ReactDOM.render(<Banner />, document.getElementById('banner'))
   </script>
 
 </body>
